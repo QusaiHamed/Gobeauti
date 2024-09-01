@@ -1,0 +1,103 @@
+.reservation-info,.invoice-info{
+max-width: 100%;
+margin-bottom: 30px;
+border: 1px solid #ccc;
+padding: 10px 15px;
+border-radius: 6px;
+}
+
+label{
+    white-space: nowrap;
+}
+input,select{
+    border: 1px solid black;
+  
+}
+button.addCustomer{
+    background-color: green;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button.addCustomer svg{
+    width: 20px;
+    height: 20px;
+
+    color: white;
+}
+.service-type p{
+    display: flex;
+    align-items: center;
+    
+}
+.service-type p svg{
+    color: blue;
+    font-size: 20px;
+}
+.discounts{
+    flex-wrap: wrap;
+}
+.discounts div{
+    width: 100%;
+}
+input:disabled{
+    background-color: #ccc;
+}
+
+.headers a{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+
+}
+.headers a:first-of-type{
+    border: 1px solid green;
+    
+}
+.headers a:first-of-type:hover{
+    color: white;
+    background-color: green;
+    
+}
+.headers a:nth-of-type(2):hover{
+    color: white;
+    background-color: blue; 
+}
+.headers a:nth-of-type(3):hover{
+    color: white;
+    background-color: darkgray; 
+}
+.headers a:nth-of-type(2){
+    border: 1px solid blue;
+}
+.headers a:nth-of-type(3){
+    border: 1px solid darkgray;
+}
+
+.buttons button{
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+}
+.service-table{
+    max-width: 100%;
+    overflow: auto;
+}
+@media screen  and (min-width:992px){
+  .container{
+    flex-direction: row;
+    max-width: 100%;
+  }  
+    
+}
+    
+
+
