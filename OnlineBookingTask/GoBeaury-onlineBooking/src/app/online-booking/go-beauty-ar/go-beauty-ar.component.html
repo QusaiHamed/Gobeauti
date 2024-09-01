@@ -1,0 +1,686 @@
+<div class="absolute cover" id="cover">
+
+</div>
+<!--start navbar-->
+<nav class="bg-gray-50 ">
+    <div class="container w-100 flex items-center   justify-between lg:justify-start py-4 px-3 " style=" min-width: 100%;direction: ltr;" >
+        <!-- Logo or Brand -->
+        <div class="text-white text-xl font-semibold">
+            <img src="../../assets/logo - Copy (1).png" class="brand" >
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" class="text-black block lg:hidden" (click)="toggle()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+       
+        </button>
+
+        <!-- Navbar Links -->
+        <div id="menu" class="hidden lg:flex lg:items-center lg:space-x-4" style="direction: ltr;">
+       
+            <a href="#" class="text-black">About</a>
+            <a href="#" class="text-black" >Booking</a>
+            <a routerLink="/OnlineBooking/EN" class="text-black" ><img src="../../../assets/download (1).png" style="height: 25px; width: 25px;border-radius: 50%;"></a>
+        </div>
+
+ <!-- Mobile Navbar Links -->
+        <div id="mobile-menu" class="hide" style="direction: ltr;">
+            <a href="#" class="text-black">About</a>
+            <a href="#" class="text-black" >Booking</a>
+            <a routerLink="/OnlineBooking/EN" class="text-black" ><img src="../../../assets/download (1).png" style="height: 25px; width: 25px;border-radius: 50%;"></a>
+        </div>
+    </div>
+</nav>
+<!--end navbar-->
+<!--start Carousel-->
+<div class="relative overflow-hidden  mx-auto " style="width: 100%;height: 400px;direction: ltr;">
+    <div class="carousel-inner flex transition-transform duration-300 ease-in-out"
+         [ngStyle]="{ transform: 'translateX(' + -currentIndex * (100 / visibleItems) + '%)' }" style="direction: ltr;">
+      <div *ngFor="let item of items" class="carousel-item flex-shrink-0 w-full">
+        <img src="../../assets/slidshow{{item}}.jpg" alt="slide{{item}}" class="w-full">
+      </div>
+    </div>
+  
+    <button (click)="prevSlide()" class="absolute top-1/2 left-4 transform -translate-y-1/2  font-bold text-white p-2 rounded-full">
+> </button>
+    <button (click)="nextSlide()" class="absolute top-1/2 right-4 transform -translate-y-1/2 font-bold  text-white p-2 rounded-full">
+       
+   <</button>
+  
+    <div class="carousel-pagination absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <span *ngFor="let dot of items; let i = index"
+            (click)="goToSlide(i)"
+            [ngClass]="{'bg-gray-800': i === currentIndex, 'bg-gray-400': i !== currentIndex}"
+            class="w-3 h-3  cursor-pointer"></span>
+    </div>
+  </div>
+
+<!--end carousel-->
+
+<!--start IconContainer-->
+<section class="icon-container" >
+    <div class="icons">
+        <i class="fa-brands fa-whatsapp" data-aos="fade-up" data-aos-duration="5000"></i>
+        <i class="fa-brands fa-snapchat" data-aos="fade-up" data-aos-duration="5000"></i>
+        <i class="fa-solid fa-phone" data-aos="fade-up" data-aos-duration="5000"></i>
+        <i class="fa-brands fa-instagram" data-aos="fade-up" data-aos-duration="5000"></i>
+        <i class="fa-brands fa-tiktok" data-aos="fade-up" data-aos-duration="5000"></i>
+        <i class="fa-solid fa-location-crosshairs" data-aos="fade-up" data-aos-duration="5000"></i>
+    </div>
+</section>
+<!--end icon container-->
+<!--start-content-->
+<section class="content mt-10 flex gap-3 ">
+    <section class="left  ">
+        <div class="flex items-center flex-row  intro-container ">
+            <div class="intro">
+        <div class="header flex  items-center justify-start">
+        <h2>اهلا جميلتنا </h2><p class="py-0 my-0" style="margin-top: 8px;">فى صالون الهاء</p>
+    </div>
+    <div class="info">
+        
+    
+    <a class=" text-blue-600 font-normal"> 34263 الدمام  حي الشعلة</a>
+
+    <p class="my-6 stars" >
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
+        <span class="fa fa-star "></span>
+    </p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam cumque consequatur totam quos et, nam magnam provident tenetur maxime incidunt aut architecto quam, itaque laudantium quis aperiam eos impedit inventore?</p>
+
+</div>
+</div>
+<div class="days days-small">
+    <div class="days-header flex items-center justify-start gap-4">
+        <i class="fa fa-circle"></i>
+        <h3> اوقات العمل:</h3>
+
+    </div>
+    <hr class="days-hr">
+    <div class="days-body mt-4">
+        <div class="flex justify-between items-center"><span>الاحد</span>     <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center"><span>الاثنين</span>     <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center"><span>الثلاثاء </span>    <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center"><span>الاربعاء</span>  <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center current"><span>الخميس</span>   <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center"><span>Friday</span>     <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center"><span>Saturday</span>   <span>9:00 ص - 5:00 م</span></div>
+    </div>
+</div>
+</div> 
+<div class="cont">
+<div class="options" data-aos="fade-up" data-aos-duration="500">
+    <div class="site flex items-center justify-start">
+        <div class="option"><input type="radio" name="" id=""> <i class="fas fa-home" style="margin-left: -10px;"></i> <span style="margin-left: -10px;">خدمة داخلية</span></div>
+        
+        <div class="option"><input type="radio" name="" id=""> <i class="fas fa-store" style="margin-left: -10px;"></i> <span style="margin-left: -10px;">خدمة منزلية</span></div>
+    </div>
+    <div class="categorires" data-aos="fade-up" data-aos-duration="500">
+        <h3 class="mb-3" style="font-size: 20px;">الاقسام:</h3>
+        <ul class="nav nav-pills  flex items-center justify-start gap-10 pb-5" id="pills-tab" role="tablist" style="width: 100%;">
+            <li class="nav-item" style="    background:  #6b0954;"
+            >
+              <a class="nav-link active" style="color: white;" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">خدمات الشعر </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">خدمات تصفيف الشعر </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"> علاج وتغذية الشعر  </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" >خدمات العروس او الحجز </a>
+              </li>
+              <li class="nav-item"> <a class="nav-link" >خدمات الاظافر والاطراف </a>
+              </li>
+              <li class="nav-item">  <a class="nav-link" >خدمات العناية بالجسم </a>
+              </li>
+              <li class="nav-item"> <a class="nav-link" >ازالة الشعر  </a>
+              </li>
+              <li class="nav-item">  <a class="nav-link" >خدمات التجميل والوجه </a>
+              </li>
+              <li class="nav-item">  <a class="nav-link" >خدمات اضافيه </a>
+              </li>
+          </ul>
+    </div>
+    <hr>
+    <div class="p-6 min-h-screen flex flex-col items-center relative ">
+        <div class="w-full max-w-4xl">
+       
+      
+          <!-- Stepper Navigation -->
+          <div class="flex items-center justify-between mb-8 steps-container">
+            <div *ngFor="let step of steps; let i = index" class="flex-1 text-center">
+              <div [ngClass]="{'violet text-white': i + 1 === currentStep, 'bg-gray-300': i + 1 !== currentStep}"
+                   class="inline-block p-4 rounded-full text-2xl step">
+                <!-- Inline FontAwesome Icons -->
+                <ng-container [ngSwitch]="i + 1">
+            
+                  <i *ngSwitchCase="1"  class="fa-solid fa-gear"></i>
+                  <i *ngSwitchCase="2"  class="fa-solid fa-calendar-days"></i>
+                  <i *ngSwitchCase="3" class="fa-solid fa-user"></i>
+                  <i *ngSwitchCase="4"  class="fa-solid fa-credit-card"></i>
+                </ng-container>
+              </div>
+              <div class="mt-2">{{ step.label }}</div>
+            </div>
+          </div>
+      
+          <!-- Step Content -->
+          <ng-container [ngSwitch]="currentStep">
+            <div *ngSwitchCase="1">
+                <div class="services" data-aos="fade-up" data-aos-duration="500">
+                    <div class="services-header">
+                        <p>اختارى خدمة</p>
+            
+                    </div>
+                    <div class=" wow fadeInDown rounded overflow-hidden flex flex-col items-center justify-between border p-3 mt-3 card" style="width: 100%;">
+                       <div class="flex items-center justify-start holder ">
+                        <div class="px-6 py-4 ">
+                           
+                          <div class="font-bold text-xl mb-2 card-head" >صبغة الحذور</div>
+                          <p class="text-gray-700 text-base mb-2 card-body">
+                           استمتعى بلمسة سحرية تعيد لشعرك الحيوية
+                                    </p>
+                                    <span class="block mb-2">الوقت 1 ساعه 45 دقيقة  </span>   
+                         
+                            
+                        </div>
+                        <div    style=" margin-left: 9px; ">
+            <span style="background-color: #f0f0f0;;color: #6b0954; font-size: 30px;width: 50px;height: 50px;border-radius: 50%; display: flex; align-items: center;justify-content: center;" class="plus">+</span>
+                            
+                        </div>
+                    </div>
+                        <div class="flex items-center justify-between card-footer" style="gap:15px">
+                            <del style="color: red;">400 ريال </del>    <p style="color: #6b0954;">200 ريال</p>
+                            <p>خصم %10 </p>
+                            
+                        </div>
+                       
+                      </div>
+                      <div class=" rounded overflow-hidden flex flex-col items-center justify-between border p-3 mt-3 card" style="width: 100%;">
+                        <div class="flex items-center justify-start holder ">
+                         <div class="px-6 py-4 ">
+                            
+                           <div class="font-bold text-xl mb-2 card-head" >علاج الشعر</div>
+                           <p class="text-gray-700 text-base mb-2 card-body">
+                            استمتعى بلمسة سحرية تعيد لشعرك الحيوية
+                        </p>
+                                     <span class="block mb-2">الوقت :ساعتان </span>   
+                          
+                             
+                         </div>
+                         <div    style=" margin-left: 9px; ">
+             <span style="background-color: #f0f0f0;;color: #6b0954; font-size: 30px;width: 50px;height: 50px;border-radius: 50%; display: flex; align-items: center;justify-content: center;" class="plus">+</span>
+                             
+                         </div>
+                     </div>
+                         <div class="flex items-center justify-between card-footer">
+                             <p style="color: #6b0954;">200 ريال</p>
+                           
+                             
+                         </div>
+                        
+                       </div>
+                </div>
+            </div>
+      
+            <div *ngSwitchCase="2">
+                <div class="booking" data-aos="fade-up" data-aos-duration="500">
+                    <h3>تاريخ الحجز</h3>
+                    <p>يرجى اختيار تاريخ الحجز</p>
+                    <input type="date">
+                </div>
+            </div>
+      
+            <div *ngSwitchCase="3">
+                <div class="book-service mt-8 border" style="width: 100%;padding: 20px;">
+                    <div class="flex items-center justify-start" style="gap:15px">
+                        <span class="number" >1</span> <p>صبغة الجذور</p>
+                    </div>
+                    <div class="flex items-center justify-between relative" style="gap: 0;">
+                    <div class="my-4 " style="width:48%">
+                        <h4>الوقت</h4>
+                        <button class="open-modal" data-modal-target="static-modal" data-modal-toggle="static-modal"  type="button" (click)="openModal('time1')">
+                      اختيار الوقت
+                          </button>
+            </div>
+            <!-- Modal toggle -->
+            
+              
+              <!-- Main modal -->
+    
+                    <div style="width:48%">
+            
+                  
+                    <h4>الخبيرة</h4>
+                    <button class="open-modal" data-modal-target="static-modal-expert1" data-modal-toggle="static-modal-expert1"  type="button" (click)="openModal('expert1')">
+                     اختيار الخبيرة
+                      </button>
+          
+            </div>
+                    </div>
+                </div>
+                <div class="book-service mt-8 border" style="width: 100%;padding: 20px;">
+                    <div class="flex items-center justify-start" style="gap:15px">
+                        <span class="number" >2</span> <p>علاج الشعر</p>
+                    </div>
+                    <div class="flex items-center justify-between" style="gap: 0;">
+                        <div class="my-4 " style="width:48%">
+                            <h4>الوقت</h4>
+                            <button class="open-modal" data-modal-target="static-modal" data-modal-toggle="static-modal"  type="button" (click)="openModal('time2')">
+                             اختيار الوقت
+                              </button>
+                </div>
+                <!-- Modal toggle -->
+                
+                  
+                  <!-- Main modal -->
+               
+                        <div style="width:48%">
+                
+                      
+                        <h4>الخبيرة</h4>
+                        <button class="open-modal" data-modal-target="static-modal-expert1" data-modal-toggle="static-modal-expert1"  type="button" (click)="openModal('expert2')">
+                         اختيار الخبيرة
+                          </button>
+        
+                        </div>
+                    </div>
+            
+            
+                </div>
+            </div>
+   
+            <div *ngSwitchCase="4">
+                <div class="fill-info" data-aos="fade-up" data-aos-duration="500">
+                    <h3>بيانات</h3>
+                    <p>يرجى ملا كل الحقول</p>
+                    <form class="flex  justify-between items-center ">
+                    <div style="width: 48%;">
+                        <label>رقم الجوال</label><br>
+                        <input type="text" id="email" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required />
+            
+                    </div>
+                    <div style="width: 48%;">
+                        <label>الاسم</label><br>
+                        <input type="text" id="email" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required />
+            
+                    </div>
+                 
+                
+                    </form>
+                    <form>
+                        <div class="flex items-center justify-between" style="gap: 0;">
+            
+                        
+                        <div class=" mt-3" style="width: 48%;">
+                            <label>الخصم</label><br>
+                            <input type="Number" id="email" class="bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required />
+                
+                        </div>
+                        <div class="  mt-3" style="width: 48%;">
+                            <label>النقاط</label><br>
+                            <input type="Number" id="email" class="bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required />
+                
+                        </div>
+                    </div>
+                        <div class=" w-100 mt-4 ">
+                            <label class="mb-3">طريقة الدفع</label><br>
+                            <div class="flex flex-col lg:flex-row mt-10 gap-1 methods">
+                                <div class="method" style="margin-top: -35px;">
+                            <input type="radio"  name="Paymentmethod" id="" >الدفع في الصالون</div>
+                            
+                            <div class="method"><input type="radio" name="Paymentmethod" id="">ابل باى </div>
+                        
+                         
+                            <div class="method"><input type="radio" name="Paymentmethod" id="">فيزا / ماستر كارد</div>
+                            <div class="method"><input type="radio" name="Paymentmethod" id="">مدى </div>   
+                          
+                        </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="flex justify-between mb-6 mt-10">
+                <button (click)="prevStep()" [disabled]="currentStep === 1" class="p-2 stepper_button">السابق</button>
+                <button (click)="nextStep()" [disabled]="currentStep === steps.length" class="p-2 stepper_button">التالى</button>
+              </div>
+          </ng-container>
+        
+        </div>
+      </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+    <section class="right">
+<div class="days">
+    <div class="days-header flex items-center justify-start gap-4">
+        <i class="fa fa-circle"></i>
+        <h3> اوقات العمل:</h3>
+
+    </div>
+    <hr class="days-hr">
+    <div class="days-body mt-4">
+        <div class="flex justify-between items-center"><span>الاحد</span>     <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center"><span>الاثنين</span>     <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center"><span>الثلاثاء </span>    <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center"><span>الاربعاء</span>  <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center current"><span>الخميس</span>   <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center"><span>Friday</span>     <span>9:00 ص - 5:00 م</span></div>
+        <hr class="days-hr">
+        <div class="flex justify-between items-center"><span>Saturday</span>   <span>9:00 ص - 5:00 م</span></div>
+    </div>
+</div> 
+
+
+<div class="mt-3 px-5 pay" style="    position: sticky;
+top: 10px;">
+    <div style="border:1px solid #ccc">
+    <header class="bg-gray-300 p-3 " style="font-size: 1.25rem;">تفاصيل الفانورة</header>
+    <div class="body mt-3 px-2">
+        <div class="flex flex-col gap-3">
+            <p class="flex items-center justify-between"><span>صبغة الشعر</span>  <span>300 ريال</span></p>
+            <p class="flex items-center justify-between"><span>علاج الشعر</span> <span>200 ريال</span></p>
+        </div>
+        <hr class="days-hr" style="margin: 10px 0;">
+<div class="flex items-center justify-start gap-2 py-2">
+    <i class="far fa-credit-card "></i>
+    <span>طريقة الدفع : ابل باى</span>
+</div>
+<hr class="days-hr" style="margin: 10px 0;">
+<form class="flex flex-col gap-5">
+    <div class="flex items-center justify-between">
+        <div>
+            <input type="radio" name="" id=""> استخدام النقاط
+        </div>
+
+    <span>00</span>
+</div>
+<div class="relative ">
+
+
+<input type="text" class=" border border-gray-300 relative text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="استخدام النقاط" required style="    padding-right: 70px;"/>
+<button class="absolute promo-button">تطبيق</button>
+</div>
+</form>
+
+    </div>
+    <div class="bg-gray-200 mt-5 p-3">
+        <div class="flex justify-between items-center">
+         <span>الضريبة:</span>
+         <span>75 ريال</span>
+        </div>
+        <div class="flex justify-between items-center">
+         <span style="font-size:25px">الاجمالى:</span>
+         <p style="font-size:25px">575 ريال</p>
+        </div>
+          </div>
+</div>
+</div>
+    </section>
+
+</section>
+
+<div class="mt-3 px-5 pay-small">
+    <div style="border:1px solid #ccc">
+        <header class="bg-gray-300 p-3 " style="font-size: 1.25rem;">تفاصيل الفانورة</header>
+        <div class="body mt-3 px-2">
+            <div class="flex flex-col gap-3">
+                <p class="flex items-center justify-between"><span>صبغة الشعر</span>  <span>300 ريال</span></p>
+                <p class="flex items-center justify-between"><span>علاج الشعر</span> <span>200 ريال</span></p>
+            </div>
+            <hr class="days-hr" style="margin: 10px 0;">
+    <div class="flex items-center justify-start gap-2 py-2">
+        <i class="far fa-credit-card "></i>
+        <span>طريقة الدفع : ابل باى</span>
+    </div>
+    <hr class="days-hr" style="margin: 10px 0;">
+    <form class="flex flex-col gap-5">
+        <div class="flex items-center justify-between">
+            <div>
+                <input type="radio" name="" id=""> استخدام النقاط
+            </div>
+    
+        <span>00</span>
+    </div>
+    <div class="relative ">
+    
+    
+    <input type="text" class=" border border-gray-300 relative text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="استخدام النقاط" required style="    padding-right: 70px;"/>
+    <button class="absolute promo-button">تطبيق</button>
+    </div>
+    </form>
+    
+        </div>
+        <div class="bg-gray-200 mt-5 p-3">
+            <div class="flex justify-between items-center">
+             <span>الضريبة:</span>
+             <span>75 ريال</span>
+            </div>
+            <div class="flex justify-between items-center">
+             <span style="font-size:25px">الاجمالى:</span>
+             <p style="font-size:25px">575 ريال</p>
+            </div>
+              </div>
+    </div>
+</div>
+<section class="footer" data-aos="fade-up" data-aos-duration="500">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3573.314031502492!2d50.09879648496555!3d26.41334078334518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1724594154931!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+</section>
+
+
+<div class="copyright bg-gray-300 text-gray-500 flex items-center justify-center p-5">
+    <p>&copy; GoBeauty.All Rights Reserved</p>
+    </div>
+
+<!--end content-->
+<!--start modals-->
+<div>
+
+
+<div *ngIf='activeModalId.toUpperCase()=="TIME1"' id="static-modal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+    <div class="relative w-auto my-6 mx-auto max-w-3xl">
+      <!--content-->
+      <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+        <!--header-->
+        <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+          <h3 class="text-3xl font-semibold">
+            اختيار الوقت
+          </h3>
+          <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" (click)="closeModal('time2')">
+            <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+              ×
+            </span>
+          </button>
+        </div>
+        <!--body-->
+        <div class="relative p-6 flex-auto body">
+          
+            <span>11</span>
+            <span>11:30</span>
+            <span>12</span>
+            <span>12:30</span>
+            <span>01:00</span>
+            <span>01:30</span>
+            <span>02:00</span>
+            <span>02:30</span>
+    
+        <!--footer-->
+        <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b bg-white">
+          <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="closeModal('time2')">
+            غلق
+          </button>
+          <button class=" text-white  font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" style="background-color: #61045F;" (click)="closeModal('time2')">
+            حفظ
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+  <div *ngIf='activeModalId.toUpperCase()=="TIME1"' class="opacity-25 fixed inset-0 z-40 bg-black" style="z-index: -1;"></div>
+
+
+
+
+
+        <div *ngIf="activeModalId.toUpperCase()=='TIME2'" id="static-modal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+            <div class="relative w-auto my-6 mx-auto max-w-3xl">
+              <!--content-->
+              <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                <!--header-->
+                <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                  <h3 class="text-3xl font-semibold">
+                    اختيار الوقت
+                  </h3>
+                  <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" (click)="closeModal('time2')">
+                    <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                      ×
+                    </span>
+                  </button>
+                </div>
+                <!--body-->
+                <div class="relative p-6 flex-auto body">
+                  
+                    <span>11</span>
+                    <span>11:30</span>
+                    <span>12</span>
+                    <span>12:30</span>
+                    <span>01:00</span>
+                    <span>01:30</span>
+                    <span>02:00</span>
+                    <span>02:30</span>
+            
+                <!--footer-->
+                <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b bg-white">
+                  <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="closeModal('time2')">
+                    غلق
+                  </button>
+                  <button class=" text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" style="background-color: #6b0954;" (click)="closeModal('time2')">
+                    حفظ
+                  </button>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+          <div *ngIf='activeModalId.toUpperCase()=="TIME2"' class="opacity-25 fixed inset-0 z-40 bg-black" style="z-index: -1;"></div>
+
+        </div>
+    <div>
+<!------------>
+        
+<div *ngIf='activeModalId.toUpperCase()=="EXPERT1"' id="static-modal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+    <div class="relative w-auto my-6 mx-auto max-w-3xl">
+      <!--content-->
+      <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+        <!--header-->
+        <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+          <h3 class="text-3xl font-semibold">
+           اختيار الخبيرة
+          </h3>
+          <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" (click)="closeModal('time2')">
+            <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+              ×
+            </span>
+          </button>
+        </div>
+        <!--body-->
+        <div class="relative p-6 flex-auto body">
+          
+            <input type="text" id="text" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Dina" required />
+                  
+            <span>Dina/دينا</span>
+            <span>Joe/جوى</span>
+            <span>Meri/ميري</span>
+            <span>Luci/لوسى</span>
+            <span>sani/سانى</span>
+    
+        <!--footer-->
+        <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b bg-white">
+          <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="closeModal('time2')">
+            غلق
+          </button>
+          <button class=" text-white  font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" style="background-color: #61045F;" (click)="closeModal('time2')">
+            حفظ
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+  <div *ngIf='activeModalId.toUpperCase()=="EXPERT1"' class="opacity-25 fixed inset-0 z-40 bg-black" style="z-index: -1;"></div>
+
+
+
+
+
+  <div *ngIf='activeModalId.toUpperCase()=="EXPERT2"' id="static-modal" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+    <div class="relative w-auto my-6 mx-auto max-w-3xl">
+      <!--content-->
+      <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+        <!--header-->
+        <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+          <h3 class="text-3xl font-semibold">
+           اختيار الخبيرة
+          </h3>
+          <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" (click)="closeModal('time2')">
+            <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+              ×
+            </span>
+          </button>
+        </div>
+        <!--body-->
+        <div class="relative p-6 flex-auto body">
+          
+            <input type="text" id="text" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Dina" required />
+                  
+            <span>Dina/دينا</span>
+            <span>Joe/جوى</span>
+            <span>Meri/ميري</span>
+            <span>Luci/لوسى</span>
+            <span>sani/سانى</span>
+    
+        <!--footer-->
+        <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b bg-white">
+          <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="closeModal('time2')">
+            غلق
+          </button>
+          <button class=" text-white  font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" style="background-color: #61045F;" (click)="closeModal('time2')">
+            حفظ
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+  <div *ngIf='activeModalId.toUpperCase()=="EXPERT2"' class="opacity-25 fixed inset-0 z-40 bg-black" style="z-index: -1;"></div>
+
+
+    </div>
+
+
